@@ -1,0 +1,83 @@
+
+  <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+    <div class="container-fluid px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent mb-0 pb-1 px-0 me-sm-6 me-12">
+            <li class="breadcrumb-item"><a class="opacity-8 text-dark" href="/">Home</a></li>
+            <li class="breadcrumb-item text-dark active" aria-current="page">
+              {{ breadcrumb or ''}}
+            </li>
+          </ol>
+        </nav>
+        <div class="collapse navbar-collapse me-md-0 me-4" id="navbar">
+          <ul class="navbar-nav mb-2 mb-sm-0 ms-sm-auto justify-content-sm-end">
+            <li class="nav-item d-flex align-items-center">
+            </li>
+            <li class="nav-item d-xl-none ps-4 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item px-4 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0">
+                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+              </a>
+            </li>
+            <li class="nav-item dropdown pe-2 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-bell cursor-pointer"></i>
+              </a>
+              <ul class="dropdown-menu px-2 py-3 ms-sm-n4" aria-labelledby="dropdownMenuButton">
+                <li class="mb-2">
+                  <a class="dropdown-item border-radius-md" href="javascript:;">
+                    <div class="d-flex py-1">
+                      <div class="my-auto">
+                        <img src="/static/assets/img/dbupdated.jpg" class="avatar avatar-sm  me-3 ">
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          <span class="font-weight-bold">DataBase</span> updated
+                        </h6>
+                        <p class="text-xs text-secondary mb-0">
+                          <i class="fa fa-clock me-1"></i>
+                          2021.11.23
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a class="dropdown-item border-radius-md" href="javascript:;">
+                    <div class="d-flex py-1">
+                      <div class="my-auto">
+                        <img src="/static/assets/img/started.jpg" class="avatar avatar-sm me-3 ">
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          <span class="font-weight-bold">Pet project</span> started
+                        </h6>
+                        <p class="text-xs text-secondary mb-0">
+                          <i class="fa fa-clock me-1"></i>
+                          2021.10.01
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-search ms-md-auto ps-md-3 d-flex align-items-center">
+          <div class="bg-white border-radius-lg d-flex">
+            <input type="text" class="form-control border-0 ps-3" placeholder="Don't type here...">
+            <button class="btn bg-gradient-primary my-1 me-1">Search</button>
+          </div>
+        </div>
+    </div>
+  </nav>

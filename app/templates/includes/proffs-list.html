@@ -1,0 +1,32 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        {% for proff in proffs_list %}
+        <div class="col-12 col-sm-6 col-xl-4 gy-3">
+            <a href="/proffs-fully?proff1={{ proff.proff1u }}&proff2={{ proff.proff2u }}" class="cardlangs opacity-8 text-dark">
+                <div class="row align-items-center">
+                    <div class="col-4 profflist_text">
+                        {{ proff.proff1 }}</br>
+                        {{ proff.proff2 }}
+                    </div>
+
+                    <div class="col-5">
+                        <div class="row text-xxs" data-bs-toggle="tooltip" data-bs-placement="top" title="Top 3 skills required in both professions">
+                            {% for skill in proff.skills %}
+                            <div>
+                                {{ skill }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="col-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Similarity of two professions">
+                        {{ (proff.similarity*100)|round(1) }}%
+                    </div>
+                </div>
+
+
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>

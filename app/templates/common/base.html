@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="Пространство корня лотоса">
+        <meta name="author" content="Восточная сова">
+        <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}"><! - Введите значок проекта и поместите требуемый файл ico в папку static / images. ->
+
+        <title>{% block title%} Моя первая интерфейсная страница {% endblock%}</title>
+        <! - Задайте заголовок веб-страницы. С помощью этого параметра вы можете использовать некоторые функции jinja2 для необоснованного задания заголовка каждой веб-страницы. ->
+
+        {% block css %}　<! - Область модуля css ->
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <! - Необязательный файл темы Bootstrap (обычно не нужно импортировать) ->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+        <!-- Custom styles for this template -->
+        <link href="{{ url_for('static', filename='css/offcanvas.css') }}" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body>
+        {% include "common/header.html" %}<! - Представляем шаблон заголовка веб-страницы ->
+        <div class="container">
+            <div class="row row-offcanvas row-offcanvas-right">
+                {% block content %}<! - Область настраиваемого шаблона ->
+
+                {% endblock %}
+                {% include "common/sidebar.html" %}<! - Представляем боковой шаблон веб-страницы ->
+            </div><!--/row-->
+            {% include "common/footer.html" %}<! - Представляем нижний шаблон веб-страницы ->
+        </div>
+
+        {% block js %}<! - Область модуля js ->
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/offcanvas.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

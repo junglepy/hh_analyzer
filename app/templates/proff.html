@@ -1,0 +1,40 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Dashboard {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xl-1 col-md-1 col-sm-0"></div>
+        <h4 class="col-xl-5 col-md-5 col-sm-12">
+            {{ proff }}
+        </h4>
+    </div>
+    <div class="row justify-content-left">
+        <div class="col-6">
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Skill</th><th>Frequency</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for skill in proff_stat %}
+            <tr>
+                <td>{{ skill.skill }}</td>
+                <td style="text-align: center; vertical-align: middle;">{{ (skill.frequ*100)|round(1) }}%</td>
+            </tr>
+            {% endfor %}
+      <!-- filled with search results when ready -->
+    </tbody>
+  </table>
+    </div>
+    </div>
+</div>
+{% endblock content %}
+
+

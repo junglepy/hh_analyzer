@@ -1,0 +1,59 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Dashboard {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-0 col-md-1"></div>
+        <h4 class="col-xl-5 col-md-5 col-sm-12">
+            <a href="/proff/{{ proff1 }}">{{ proff1 }}</a> - <a href="/proff/{{ proff2 }}">{{ proff2 }}</a>
+        </h4>
+    </div>
+    <div class="row text-right mb-3">
+        <div class="col-xl-5 col-md-5 col-sm-5"></div>
+        <div class="col-xl-5 col-md-5 col-sm-6">
+            <div class="font-weight-bold text-body">
+                Similarity: <span style="font-size:1.7em; margin-left: 0.4em;">{{ (proff_link[0].similarity*100)|round(1) }}%</span>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-1"></div>
+        
+    </div>
+
+    <div class="row justify-content-center mb-3">
+        <div class="col-0 col-sm-3"></div>
+        <div class="col-6  col-sm-3 py-2 text-left border-end border-2 border-secondary">
+            <a href="/proff/{{ proff1 }}" class="proff_a">{{ proff1 }}</a>
+        </div>
+        <div class="col-6 col-sm-3 py-2 text-right border-start border-2 border-secondary">
+            <a href="/proff/{{ proff2 }}" class="proff_a">{{ proff2 }}</a>
+        </div>
+        <div class="col-0 col-sm-3"></div>
+    </div>
+    {% for skill in proff_link %}
+    <div class="row justify-content-center">
+        <div class="col-0 col-sm-6">
+            <div class="row py-2 keyskill justify-content-center">
+                <div class="col-2 text-left fw-lighter">
+                    {{ (skill.skill_pid1*100)|round(1) }}%
+                </div>
+                <div class="col-8 text-center">
+                    {{ skill.skill }}
+                </div>
+                <div class="col-2 text-right fw-lighter">
+                    {{ (skill.skill_pid2*100)|round(1) }}%
+                </div>
+        </div>
+        </div>
+        
+    
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+
+
